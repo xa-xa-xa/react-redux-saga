@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createPosts } from '../redux/actions';
+import { createPost } from '../redux/actions';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -14,6 +14,10 @@ class PostForm extends React.Component {
   onSubmit = e => {
     e.preventDefault();
     const { title } = this.state;
+
+    // check if empty post
+    if (!title.trim()) return;
+
     const newPost = {
       title,
       id: Date.now().toString()
@@ -51,7 +55,7 @@ class PostForm extends React.Component {
             />
             <div className='input-group-append'>
               <button
-                className='btn btn-outline-primary'
+                className='btn btn-outline-primary bg-light'
                 type='submit'
                 id='button-create-post'>
                 create
@@ -64,8 +68,6 @@ class PostForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = {
-  createPosts
-};
+const mapDispatchToProps = { createPost };
 
-export default connect(null)(PostForm);
+export default connect(null, mapDispatchToProps)(PostForm);

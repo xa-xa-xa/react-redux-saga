@@ -5,20 +5,22 @@ import FetchedPosts from './components/FetchedPosts';
 
 function App() {
   return (
-    <div className='container pt-3'>
-      <div className='row'>
-        <div className='col'>
-          <PostForm />
+    <div className='container'>
+      <div className='container text-white'>
+        <div className='row mt-3'>
+          <div className='col'>
+            <PostForm />
+          </div>
         </div>
-      </div>
-      <div className='row mt-4'>
-        <div className='col'>
-          <h2>Synchronous Posts</h2>
-          <Posts posts={[]} />
-        </div>
-        <div className='col'>
-          <h2>Asynchronous Posts</h2>
-          <FetchedPosts />
+        <div className='row mt-4'>
+          <div className='col'>
+            <h2>Synchronous Posts</h2>
+            <Posts />
+          </div>
+          <div className='col'>
+            <h2>Asynchronous Posts</h2>
+            <FetchedPosts />
+          </div>
         </div>
       </div>
     </div>
