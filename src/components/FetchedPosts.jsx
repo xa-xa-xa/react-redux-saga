@@ -8,9 +8,13 @@ import Spinner from './Spinner';
 const FetchedPosts = () => {
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts.fetchedPosts);
-  const loading = useSelector(state => state.app.loading);
+  const loading = useSelector(state => {
+    return state.app.loading;
+  });
 
-  if (!posts.length > 0) {
+  if (loading) return <Spinner />;
+
+  if (!posts.length) {
     return (
       <button
         onClick={() => dispatch(fetchPosts())}
@@ -19,7 +23,6 @@ const FetchedPosts = () => {
       </button>
     );
   }
-  if (loading) return <Spinner />;
   return posts.map(post => <Post post={post} key={post.id} />);
 };
 
