@@ -1,5 +1,4 @@
 import React from 'react';
-import moduleName from '../redux/types';
 
 const Alert = ({ text }) => {
   return (
