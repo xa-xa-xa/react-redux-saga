@@ -23,11 +23,13 @@ class PostForm extends React.Component {
 
     const newPost = {
       title,
+      body,
       id: Date.now().toString()
     };
 
     this.props.createPost(newPost);
     this.setState({ title: '' });
+    this.setState({ body: '' });
   };
 
   onChangeInputHandler = e => {
@@ -52,29 +54,28 @@ class PostForm extends React.Component {
               name='title'
               value={this.state.title}
               onChange={this.onChangeInputHandler}
-              className='form-control'
+              className='rounded-top border-light'
               placeholder='Create title for your post.'
               aria-label='Create title for your post.'
               aria-describedby='button-addon2'
             />
-          </div>
-
-          <div className='mb-4 d-flex flex-column'>
-            <label htmlFor='title'>Post's Text</label>
-
-            <input
+            <textarea
               type='text'
-              name='title'
-              value={this.state.title}
+              name='body'
+              value={this.state.body}
               onChange={this.onChangeInputHandler}
-              className='form-control'
+              className='rounded-bottom border-light rounded-top-0 border-gray'
               placeholder='text of your post goes here...'
               aria-label='text of your post goes here...'
               aria-describedby='button-addon2'
             />
           </div>
+
+          {/* <div className='mb-4 d-flex flex-column'>
+            <label htmlFor='title'>Post's Text</label>
+          </div> */}
           <button
-            className='btn btn-outline-primary bg-light'
+            className='btn btn-success btn-lg'
             type='submit'
             id='button-create-post'>
             create
