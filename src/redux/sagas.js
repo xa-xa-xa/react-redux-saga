@@ -20,7 +20,7 @@ function* sagaWorker() {
 }
 
 async function fetchPosts() {
-  const URL = 'https://1jsonplaceholder.typicode.com/posts?_limit=5';
+  const URL = 'https://jsonplaceholder.typicode.com/posts?_limit=5';
 
   const response = await fetch(URL);
   return await response.json();
