@@ -18,7 +18,7 @@ const AsyncPosts = () => {
     return (
       <button
         onClick={() => dispatch(fetchPosts())}
-        className='btn btn-primary'>
+        className='btn btn-primary btn-lg'>
         Download posts
       </button>
     );

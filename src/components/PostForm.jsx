@@ -48,7 +48,6 @@ class PostForm extends React.Component {
         {this.props.alert && <Alert text={this.props.alert} />}
         <div className='form-group d-flex flex-column'>
           <div className='mb-3 d-flex flex-column'>
-            <label htmlFor='title'>Post's Title</label>
             <input
               type='text'
               name='title'
@@ -70,10 +69,6 @@ class PostForm extends React.Component {
               aria-describedby='button-addon2'
             />
           </div>
-
-          {/* <div className='mb-4 d-flex flex-column'>
-            <label htmlFor='title'>Post's Text</label>
-          </div> */}
           <button
             className='btn btn-success btn-lg'
             type='submit'
