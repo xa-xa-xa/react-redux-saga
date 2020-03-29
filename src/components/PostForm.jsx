@@ -15,7 +15,7 @@ class PostForm extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const { title } = this.state;
+    const { title, body } = this.state;
 
     // check if empty post
     if (!title.trim())
@@ -44,28 +44,41 @@ class PostForm extends React.Component {
     return (
       <form onSubmit={this.onSubmit}>
         {this.props.alert && <Alert text={this.props.alert} />}
-        <div className='form-group'>
-          <label htmlFor='title'>Post's header</label>
-          <div className='input-group mb-3'>
+        <div className='form-group d-flex flex-column'>
+          <div className='mb-3 d-flex flex-column'>
+            <label htmlFor='title'>Post's Title</label>
             <input
               type='text'
               name='title'
               value={this.state.title}
               onChange={this.onChangeInputHandler}
               className='form-control'
-              placeholder='Create new post here...'
-              aria-label='Create new post here...'
+              placeholder='Create title for your post.'
+              aria-label='Create title for your post.'
               aria-describedby='button-addon2'
             />
-            <div className='input-group-append'>
-              <button
-                className='btn btn-outline-primary bg-light'
-                type='submit'
-                id='button-create-post'>
-                create
-              </button>
-            </div>
           </div>
+
+          <div className='mb-4 d-flex flex-column'>
+            <label htmlFor='title'>Post's Text</label>
+
+            <input
+              type='text'
+              name='title'
+              value={this.state.title}
+              onChange={this.onChangeInputHandler}
+              className='form-control'
+              placeholder='text of your post goes here...'
+              aria-label='text of your post goes here...'
+              aria-describedby='button-addon2'
+            />
+          </div>
+          <button
+            className='btn btn-outline-primary bg-light'
+            type='submit'
+            id='button-create-post'>
+            create
+          </button>
         </div>
       </form>
     );

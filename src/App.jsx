@@ -1,7 +1,7 @@
 import React from 'react';
 import Posts from './components/Posts';
 import PostForm from './components/PostForm';
-import FetchedPosts from './components/FetchedPosts';
+import AsyncPosts from './components/AsyncPosts';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           </div>
           <div className='col'>
             <h2>Asynchronous Posts</h2>
-            <FetchedPosts />
+            <AsyncPosts />
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { fetchPosts } from '../redux/actions';
 import Post from './Post';
 import Spinner from './Spinner';
 
-const FetchedPosts = () => {
+const AsyncPosts = () => {
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts.fetchedPosts);
   const loading = useSelector(state => {
@@ -26,4 +26,4 @@ const FetchedPosts = () => {
   return posts.map(post => <Post post={post} key={post.id} />);
 };
 
-export default FetchedPosts;
+export default AsyncPosts;
